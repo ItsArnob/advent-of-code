@@ -9,8 +9,8 @@ inputData.splice(0, 1);
 const boards = [];
 let currentBoardIndex = 0;
 let inputDataLength = inputData.length;
-let sumOfWinningBoard = 0;
 let winningNumber = 0;
+let won = 0;
 
 for (let i = 0; i < inputDataLength; i++) {
     if (!boards[currentBoardIndex]) {
@@ -40,6 +40,7 @@ for (let i = 0; i < inputDataLength; i++) {
         currentBoardIndex++;
     }
 }
+
 labelsAreInteresting:
 for (num of nums) {
 
@@ -53,8 +54,26 @@ for (num of nums) {
         }
         for (iDontKnowWhatToNameThis of rowNcolumn) {
             if (!iDontKnowWhatToNameThis.length) {
+                
+                won++;
 
-                console.log(`index of winner board is ${boardIndex}`);
+                boards[boardIndex].rowsNcolumns.splice(0, 5);
+                
+                let sumOfWinningBoard = 0;
+                for (let item of boards[boardIndex].rowsNcolumns) {
+
+                    item.forEach(number => sumOfWinningBoard += number);
+
+                };
+                winningNumber = Number.parseInt(num);
+                if(won == boards.length) {
+                    console.log("part two:", winningNumber , sumOfWinningBoard)
+                    
+                }
+                if(won == 1) {
+               
+
+                console.log("Part one:", sumOfWinningBoard * winningNumber);
                 /*
                 | It was at this point when i realized that nesting the columns and rows in the same array was a
                 | bad idea and Im too tired to refactor all of this. So Im just gonna use the first 5 arrays
@@ -66,18 +85,15 @@ for (num of nums) {
                    item.forEach(number => sumOfWinningBoard += Number.parseInt(item));
                 });
                 */
-                boards[boardIndex].rowsNcolumns.splice(0, 5);
-                for (let item of boards[boardIndex].rowsNcolumns) {
-                    item.forEach(number => sumOfWinningBoard += number);
-                };
+                
+                
 
-                winningNumber = Number.parseInt(num);
-                break labelsAreInteresting;
+                
+                } //break labelsAreInteresting;
             };
         };
 
     };
 };
 
-console.log(`Part one: ${ sumOfWinningBoard * winningNumber}`);
 console.timeEnd("It took");
