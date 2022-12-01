@@ -1,6 +1,6 @@
 pub fn run(data: &String) {
 
-    let mut calories: Vec<i32> = Vec::new(); // this one stores the sum of all elves.
+    let mut calories: Vec<i32> = Vec::new(); // this one stores the calorie sum of all elves.
     let mut last_number = 0; // only needed for the loop.
     let mut last_highest_calorie= 0;
     let mut second_last_highest_calorie = 0;
