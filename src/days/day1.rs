@@ -38,6 +38,9 @@ pub fn run(data: &String) {
     // third_last_highest_calorie is the third highest calorie food another one of the elves have.
     // explanation: self-explanatory 🦀🦀
 
+    // I just realized i could've used a sort function on the vector and taken the first 3 items.
+    // i feel dumb.
+    
     for  elf_calories in calories {
         if elf_calories > last_highest_calorie {
             third_last_highest_calorie = second_last_highest_calorie;
