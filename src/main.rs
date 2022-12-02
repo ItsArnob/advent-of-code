@@ -1,7 +1,5 @@
 use std::{env,fs, time};
-pub mod days {
-    automod::dir!(pub "src/days");
-}
+pub mod days;
 
 // Note: this piece of code only reads the file and executes the function for the specific puzzle.
 // Code for the puzzles are located in the src/days directory.
@@ -25,7 +23,10 @@ fn main() {
                 "1" => {
                     days::day1::run(&data);
                 }
-                _ => println!("Day argument must be between 1-1")
+                "2" => {
+                    days::day2::run(&data);
+                }
+                _ => println!("Day argument must be between 1-2")
             }
         }
         Err(e) => {
