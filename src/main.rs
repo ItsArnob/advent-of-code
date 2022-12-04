@@ -1,4 +1,6 @@
-use std::{env,fs, time};
+extern crate core;
+
+use std::{env, fs, time};
 pub mod days;
 
 // Note: this piece of code only reads the file and executes the function for the specific puzzle.
@@ -28,6 +30,9 @@ fn main() {
                 }
                 "3" => {
                     days::day3::run(&data);
+                }
+                "4" => {
+                    days::day4::run(&data);
                 }
                 _ => println!("Day argument must be between 1-3")
             }
