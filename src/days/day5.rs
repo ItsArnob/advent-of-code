@@ -19,7 +19,7 @@ pub fn run(data: &String) {
 
         }
 
-        for (index, line) in lines.clone().into_iter().enumerate() {
+        for line in lines.clone() {
         
 
             let crate_ = line.chars().skip(skip_value).take(1);
