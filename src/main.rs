@@ -46,7 +46,14 @@ fn main() {
                 "8" => {
                     days::day8::run(&data);
                 }
-                _ => println!("Day argument must be between 1-8")
+                "9" => {
+                    // days::day9::run(&data);
+                   todo!();
+                }
+                "10" => {
+                    days::day10::run(&data);
+                }
+                _ => println!("Day argument must be between 1-10")
             }
         }
         Err(e) => {
